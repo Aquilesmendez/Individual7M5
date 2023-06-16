@@ -9,21 +9,28 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.individual7m5.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity implements Vista {
 
     private EditText passwordEditText;
     private TextView passwordStrengthTextView2;
     private Button checkButton;
+
     private Presentador presentador;
+
+    private ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        passwordEditText = findViewById(R.id.passwordEditText);
-        passwordStrengthTextView2 = findViewById(R.id.passwordStrengthTextView2);
-        checkButton = findViewById(R.id.checkButton);
+        passwordEditText = binding.passwordEditText;
+        passwordStrengthTextView2 = binding.passwordStrengthTextView2;
+        checkButton = binding.checkButton;
 
         Modelo modelo = new Modelo();
         presentador = new Presentador(modelo, this);

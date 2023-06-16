@@ -5,6 +5,9 @@ plugins {
 android {
     namespace 'com.example.individual7m5'
     compileSdk 33
+    viewBinding {
+        enabled true
+    }
 
     defaultConfig {
         applicationId "com.example.individual7m5"
@@ -27,6 +30,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+
 
 dependencies {
 
